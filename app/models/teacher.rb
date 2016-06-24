@@ -1,20 +1,6 @@
-class User < ActiveRecord::Base
+class Teacher < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  mount_uploader :photo, PhotoUploader
-
-enum role: [ :teacher, :student ,:guest]
-
- 
- private 
-  
-  def default_role
-    self.role ||= 0
-  end
-
 end
-
-
-

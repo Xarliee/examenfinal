@@ -3,11 +3,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-<label>Foto</label>
-    <%= f.file_field :photo %>
-    <%= f.hidden_field :photo_cache %> </p>
-
-<div class="field">
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -30,9 +26,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-   <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="field">
+    <%= f.label :cv %><br>
+    <%= f.text_field :cv %>
   </div>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "teachers/shared/links" %>
