@@ -1,7 +1,11 @@
-<h2>Sign up</h2>
+<h2>Registrar profesor</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
+  <label>Foto</label>
+    <%= f.file_field :photo %>
+    <%= f.hidden_field :photo_cache %> </p>
 
   <div class="field">
     <%= f.label :name %><br>
